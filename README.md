@@ -12,7 +12,7 @@ A single-script benchmark that launches EC2 instances of the types you name, sen
 
 ## Quickstart
 
-Not verified end to end: it launches paid EC2 instances and I did not run it. What was checked on 2026-10-07: `--help`, and `cost_per_inference` and `plot_results` run on made-up numbers (for example 0.05 s average latency over 100 runs on `g4dn.xlarge` gives 7.3e-06 USD per inference).
+Not verified end to end: it launches paid EC2 instances and was not run for this README. Checked on 2026-10-07: `--help`, and `cost_per_inference` and `plot_results` run on made-up numbers (for example 0.05 s average latency over 100 runs on `g4dn.xlarge` gives 7.3e-06 USD per inference).
 
 ```bash
 python3 -m venv venv && source venv/bin/activate
