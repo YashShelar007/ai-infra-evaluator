@@ -32,7 +32,7 @@ The script writes `results.png` in the current directory.
 
 For each instance type, `benchmark.py` launches one instance with `user_data.sh` as user data, waits for the `running` state, reads its public DNS name, and polls `http://<host>:8080/ping` for up to 300 seconds. It then POSTs `sample.png` (a 32 by 32 image) to `/predictions/resnet50` the requested number of times, one request at a time, and averages the wall-clock latency. Cost per inference is the hourly rate times total request time divided by 3600 and by the run count.
 
-Termination sits in a `finally` block, so an instance is terminated after a failure in the wait or benchmark steps too. If the script is killed before that, or `run_instances` succeeded but the process died, check the console for a leftover instance named `ai-evaluator`. The README used to say to look for a `Project` tag; the script sets only `Name=ai-evaluator`.
+Termination sits in a `finally` block, so an instance is terminated after a failure in the wait or benchmark steps too. If the script is killed before that, or `run_instances` succeeded but the process died, check the console for a leftover instance named `ai-evaluator`. The script sets only the tag `Name=ai-evaluator`.
 
 ```
 benchmark.py     CLI, EC2 lifecycle, request loop, cost math, plot
